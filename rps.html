@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var yourScore = 0;
+      var pcScore = 0;
+
+      var rock = "rock",
+        paper = "paper",
+        scissor = "scissor";
+
+      for (let i = 1; i <= 3; i++) {
+        var you = prompt("choose! rock, paper or scissor?");
+        var num = Math.floor(Math.random() * 3);
+
+        if (num == 0) {
+          pc = rock;
+        } else if (num == 1) {
+          pc = paper;
+        } else if (num == 2) {
+          pc = scissor;
+        }
+
+        alert("your choice: " + you + "  pc choice: " + pc);
+
+        if (you == pc) {
+          alert("It is a tie!");
+        }
+
+        if (you == rock) {
+          if (pc == paper) {
+            alert("you lost !");
+            pcScore++;
+          } else {
+            alert("you won !");
+            yourScore++;
+          }
+        }
+
+        if (you == scissor) {
+          if (pc == paper) {
+            alert("you won !");
+            yourScore++;
+          } else {
+            alert("you lost !");
+            pcScore++;
+          }
+        }
+
+        if (you == paper) {
+          if (pc == rock) {
+            alert("you won !");
+            yourScore++;
+          } else {
+            alert("you lost !");
+            pcScore++;
+          }
+        }
+      }
+      alert("your score is: " + yourScore + " pc score is: " + pcScore);
+      // if ((you = rock) && (pc = rock)) {
+      //   alert("you:rock - pc:rock  it is a tie");
+      //   yourScore = yourScore;
+      //   pcScore = pcScore;
+      // } else if ((you = rock) && (pc = paper)) {
+      //   alert("you:rock - pc:paper  pc wins ");
+      //   yourScore = yourScore;
+      //   pcScore = pcScore + 1;
+      // } else if ((you = rock) && (pc = scissor)) {
+      //   alert("you:rock - pc:scissor  you win");
+      //   yourScore = yourScore + 1;
+      //   pcScore = pcScore;
+      // } else if ((you = paper) && (pc = rock)) {
+      //   alert("you:paper - pc:rock  you win");
+      //   yourScore = yourScore + 1;
+      //   pcScore = pcScore;
+      // } else if ((you = paper) && (pc = paper)) {
+      //   alert("it is a tie");
+      //   yourScore = yourScore;
+      //   pcScore = pcScore;
+      // } else if ((you = paper) && (pc = scissor)) {
+      //   alert("you:paper - pc:scissor   pc wins");
+      //   yourScore = yourScore;
+      //   pcScore = pcScore + 1;
+      // } else if ((you = scissor) && (pc = rock)) {
+      //   alert("you:scissor - pc rock  pc wins");
+      //   yourScore = yourScore;
+      //   pcScore = pcScore + 1;
+      // } else if ((you = scissor) && (pc = paper)) {
+      //   alert("you:scissor - pc:paper  you win");
+      //   yourScore = yourScore + 1;
+      //   pcScore = pcScore;
+      // } else if ((you = scissor) && (pc = scissor)) {
+      //   alert("it is a tie");
+      //   yourScore = yourScore;
+      //   pcScore = pcScore;
+      // }
+    </script>
+  </body>
+</html>
