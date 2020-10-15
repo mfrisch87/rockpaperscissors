@@ -9,12 +9,13 @@
     <script>
       var yourScore = 0;
       var pcScore = 0;
+      var tieScore = 0;
 
       var rock = "rock",
         paper = "paper",
         scissor = "scissor";
 
-      for (let i = 1; i <= 3; i++) {
+      for (let i = 1; i <= 10; i++) {
         var you = prompt("choose! rock, paper or scissor?");
         var num = Math.floor(Math.random() * 3);
 
@@ -30,9 +31,10 @@
 
         if (you == pc) {
           alert("It is a tie!");
+          tieScore++
         }
 
-        if (you == rock) {
+        else if (you == rock) {
           if (pc == paper) {
             alert("you lost !");
             pcScore++;
@@ -42,7 +44,7 @@
           }
         }
 
-        if (you == scissor) {
+        else if (you == scissor) {
           if (pc == paper) {
             alert("you won !");
             yourScore++;
@@ -52,7 +54,7 @@
           }
         }
 
-        if (you == paper) {
+        else if (you == paper) {
           if (pc == rock) {
             alert("you won !");
             yourScore++;
@@ -62,7 +64,7 @@
           }
         }
       }
-      alert("your score is: " + yourScore + " pc score is: " + pcScore);
+      alert("your score is: " + yourScore + " pc score is: " + pcScore + " tie scores: " + tieScore);
       // if ((you = rock) && (pc = rock)) {
       //   alert("you:rock - pc:rock  it is a tie");
       //   yourScore = yourScore;
